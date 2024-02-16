@@ -1,5 +1,68 @@
-@import 'normalize.css';
+@import "normalize.css";
+
+:root {
+  --light: #fbf4e6;
+  --peach: #fd9768;
+  --green: #464c19;
+  --border-radius: 30px; /* Define a variable for border-radius */
+}
 
 * {
-    font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+html {
+  font-size: 16px;
+}
+.accordion__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--green);
+  text-transform: uppercase;
+}
+.accordion__subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: var(--green);
+  text-transform: uppercase;
+}
+.accordion__text {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: var(--green);
+}
+.accordion__item {
+  display: flex;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--light);
+  border-radius: var(--border-radius);
+}
+.accordion__image {
+  border-radius: var(--border-radius);
+}
+.accordion__label {
+    writing-mode: vertical-rl;
+    transform: rotate(360deg);
+}
+.accordion__button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: fit-content;
+  padding: 10px 20px;
+  background-color: var(--green);
+  color: var(--light);
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--border-radius); /* Use the variable for border-radius */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
