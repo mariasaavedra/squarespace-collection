@@ -26,7 +26,6 @@ html {
   .accordion__button {
     background-color: var(--light);
     color: var(--green);
-  
   }
 }
 .accordion__title {
@@ -51,7 +50,7 @@ html {
 }
 .accordion__item {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
@@ -62,6 +61,9 @@ html {
   aspect-ratio: 1/1.5;
   max-width: 250px;
   object-fit: cover;
+}
+.accordion__content {
+  padding: 1rem;
 }
 .accordion__label {
   writing-mode: vertical-rl;
