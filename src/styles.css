@@ -13,9 +13,6 @@ html {
   font-size: 16px;
   padding: 2rem;
 }
-.accordion {
-  overflow: hidden;
-}
 .accordion--light {
   background-color: var(--light);
   color: var(--green);
@@ -86,6 +83,12 @@ html {
   transition: background-color 0.3s ease;
 }
 @media (max-width: 768px) {
+  .accordion {
+    position: relative;
+    overflow: hidden;
+    height: 900px;
+    border-radius: var(--border-radius);
+  }
   .accordion__item {
     display: flex;
     flex-direction: column;
