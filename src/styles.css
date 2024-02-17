@@ -83,11 +83,11 @@ html {
   transition: background-color 0.3s ease;
 }
 @media (max-width: 768px) {
+  #accordion,
   .accordion {
     position: relative;
     overflow: hidden;
     height: 900px;
-    border-radius: var(--border-radius);
   }
   .accordion__item {
     display: flex;
@@ -136,6 +136,7 @@ html {
     }
 }
 @media (min-width: 768px) {
+  #accordion,
   .accordion {
     position: relative;
     overflow: hidden;
