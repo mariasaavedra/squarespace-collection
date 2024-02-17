@@ -12,6 +12,15 @@
 html {
   font-size: 16px;
 }
+.accordion {
+  position: relative;
+  /* overflow: hidden; */
+  height: auto;
+  width: auto;
+}
+.accordion__inner {
+  position: relative
+}
 .accordion--light {
   background-color: var(--light);
   color: var(--green);
@@ -51,6 +60,7 @@ html {
 .accordion__item {
   display: flex;
   gap: 1rem;
+  position: absolute;
   max-width: 600px;
   margin: 0 auto;
   padding: 1rem;
@@ -58,7 +68,7 @@ html {
 }
 .accordion__image {
   border-radius: var(--border-radius);
-  aspect-ratio: 1/1.5;
+  aspect-ratio: 1/1.25;
   max-width: 250px;
   object-fit: cover;
 }
