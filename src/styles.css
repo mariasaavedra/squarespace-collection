@@ -14,12 +14,9 @@ html {
 }
 .accordion {
   position: relative;
-  /* overflow: hidden; */
-  height: auto;
-  width: auto;
-}
-.accordion__inner {
-  position: relative
+  overflow: hidden;
+  height: 350px;
+  aspect-ratio: 2/1;
 }
 .accordion--light {
   background-color: var(--light);
@@ -61,10 +58,16 @@ html {
   display: flex;
   gap: 1rem;
   position: absolute;
-  max-width: 600px;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
   margin: 0 auto;
   padding: 1rem;
   border-radius: var(--border-radius);
+}
+.accordion__item:nth-child(1) {
+  transform: translateX(100%);
 }
 .accordion__image {
   border-radius: var(--border-radius);
