@@ -4,7 +4,7 @@
   --light: #fbf4e6;
   --peach: #faced3;
   --green: #464c19;
-  --border-radius: 0px; /* Define a variable for border-radius */
+  --border-radius: 15px; /* Define a variable for border-radius */
 }
 * {
   font-family: "Roboto", sans-serif;
@@ -67,7 +67,6 @@ html {
   overflow: hidden;
   margin: 0 auto;
   padding: 1rem;
-  border-radius: var(--border-radius);
   transition: all 1s ease;
   cursor: pointer;
 }
@@ -85,6 +84,9 @@ html {
   transform: translateX(calc(100% - 50px));
 }
 /* Active Accordion Items  */
+.active.accordion__item {
+  border-radius: var(--border-radius);
+}
 .active.accordion__item:nth-child(1) {
   z-index: 1;
   transform: translateX(0px);
