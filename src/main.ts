@@ -120,6 +120,11 @@
   };
 
   const $slides = document.querySelectorAll<HTMLDivElement>(".accordion__item");
+  const indexesFromSlides = Array.from($slides).map((slide) => {
+    if (!slide.dataset.index) return null;
+    return parseIndex(slide.dataset.index);
+  });
+
   for (const slide of $slides) {
     if (!slide.dataset.index) return;
     const Xoffset = tabWidth * parseInt(slide.dataset.index);
@@ -128,13 +133,18 @@
     slide.addEventListener("click", () => toggleSlide(slide));
   }
   const assignActiveCard = (slide: HTMLDivElement) => {
-    console.log(slide);
-    const index = parseIndex(slide?.dataset?.index);
+    const indexOfClickedSlide = parseIndex(slide?.dataset?.index);
     for (const $slide of $slides) {
-      if (!index || !$slide.dataset.index) return;
-      const currentIndex = parseIndex($slide.dataset.index);
-      if (currentIndex <= index) {
-        $slide.style.transform = `translateX(${tabWidth * (currentIndex)}px)`;
+      const indexesFromReversedSlides = indexesFromSlides.slice().reverse();
+      const currentIndex = parseIndex($slide?.dataset?.index);
+      const indexOfReversedSlides =
+        indexesFromReversedSlides.indexOf(currentIndex) + 1;
+
+
+      if (currentIndex > indexOfClickedSlide) {
+        $slide.style.transform = `translateX(calc(100% - ${
+          indexOfReversedSlides * tabWidth
+        }px))`;
       }
     }
   };
