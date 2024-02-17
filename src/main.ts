@@ -82,6 +82,7 @@
     },
   ];
   const accordion = document.querySelector<HTMLDivElement>("#accordion");
+  const tabWidth = 50;
 
   function generateAccordionHTML(slides: Accordion): string {
     return slides
@@ -104,7 +105,6 @@
       .join("");
   }
 
-  // This function call would generate the HTML for your accordion based on the slides data
   const accordionHTML = generateAccordionHTML(slides);
   if (accordion) {
     accordion.innerHTML = accordionHTML;
@@ -114,17 +114,28 @@
     assignActiveCard(slide);
   };
 
+  const parseIndex = (index: string | undefined): number => {
+    if (!index) return 0;
+    return parseInt(index);
+  };
+
   const $slides = document.querySelectorAll<HTMLDivElement>(".accordion__item");
   for (const slide of $slides) {
+    if (!slide.dataset.index) return;
+    const Xoffset = tabWidth * parseInt(slide.dataset.index);
+    slide.style.zIndex = slide.dataset.index;
+    slide.style.transform = `translateX(${Xoffset}px)`;
     slide.addEventListener("click", () => toggleSlide(slide));
   }
   const assignActiveCard = (slide: HTMLDivElement) => {
-    const index = slide.dataset.index;
+    console.log(slide);
+    const index = parseIndex(slide?.dataset?.index);
     for (const $slide of $slides) {
       if (!index || !$slide.dataset.index) return;
-      if ($slide.dataset.index <= index) {
-        $slide.classList.add("active");
-      } else $slide.classList.remove("active");
+      const currentIndex = parseIndex($slide.dataset.index);
+      if (currentIndex <= index) {
+        $slide.style.transform = `translateX(${tabWidth * (currentIndex)}px)`;
+      }
     }
   };
 })();
