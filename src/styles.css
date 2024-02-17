@@ -67,7 +67,8 @@ html {
   overflow: hidden;
   margin: 0 auto;
   padding: 1rem;
-  transition: all 1s ease;
+  transition: all 0.5s;
+  transition-timing-function:cubic-bezier(.57,.21,.69,1.25);
   cursor: pointer;
 }
 /* Accordion Items */
@@ -85,7 +86,7 @@ html {
 }
 /* Active Accordion Items  */
 .active.accordion__item {
-  border-radius: var(--border-radius);
+border-radius: var(--border-radius);
 }
 .active.accordion__item:nth-child(1) {
   z-index: 1;
