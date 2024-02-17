@@ -31,21 +31,21 @@ html {
 .accordion__title {
   font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
   color: inherit;
   text-transform: uppercase;
 }
 .accordion__subtitle {
   font-size: 1rem;
   font-weight: 400;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
   color: inherit;
   text-transform: uppercase;
 }
 .accordion__text {
   font-size: 1rem;
   font-weight: 400;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
   color: inherit;
 }
 .accordion__item {
@@ -53,7 +53,7 @@ html {
   gap: 1rem;
   max-width: 600px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 1rem;
   border-radius: var(--border-radius);
 }
 .accordion__image {
@@ -75,7 +75,7 @@ html {
   justify-content: space-between;
   align-items: center;
   width: fit-content;
-  padding: 10px 20px;
+  padding: 10px 1rem;
   background-color: var(--green);
   color: var(--light);
   font-size: 15px;
