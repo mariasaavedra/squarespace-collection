@@ -4,19 +4,20 @@
   --light: #fbf4e6;
   --peach: #faced3;
   --green: #464c19;
-  --border-radius: 0; /* Define a variable for border-radius */
+  --border-radius: 0px; /* Define a variable for border-radius */
 }
 * {
   font-family: "Roboto", sans-serif;
 }
 html {
   font-size: 16px;
+  padding: 2rem;
 }
 .accordion {
   position: relative;
   overflow: hidden;
   height: 350px;
-  
+  border-radius: var(--border-radius);
   aspect-ratio: 2/1;
 }
 .accordion--light {
@@ -63,10 +64,14 @@ html {
   right: 0;
   left: 0;
   bottom: 0;
+  overflow: hidden;
   margin: 0 auto;
   padding: 1rem;
   border-radius: var(--border-radius);
+  transition: all 1s ease;
+  cursor: pointer;
 }
+/* Accordion Items */
 .accordion__item:nth-child(1) {
   z-index: 1;
   transform: translateX(0px);
@@ -78,6 +83,19 @@ html {
 .accordion__item:nth-child(3) {
   z-index: 3;
   transform: translateX(calc(100% - 50px));
+}
+/* Active Accordion Items  */
+.active.accordion__item:nth-child(1) {
+  z-index: 1;
+  transform: translateX(0px);
+}
+.active.accordion__item:nth-child(2) {
+  z-index: 2;
+  transform: translateX(calc(50px));
+}
+.active.accordion__item:nth-child(3) {
+  z-index: 3;
+  transform: translateX(calc(100px));
 }
 .accordion__image {
   border-radius: var(--border-radius);
