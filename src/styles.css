@@ -18,7 +18,7 @@ html {
   overflow: hidden;
   height: 350px;
   border-radius: var(--border-radius);
-  aspect-ratio: 2/1;
+  aspect-ratio: 2.25/1;
 }
 .accordion--light {
   background-color: var(--light);
@@ -67,7 +67,7 @@ html {
   overflow: hidden;
   margin: 0 auto;
   padding: 1rem;
-  transition: all 0.5s;
+  transition: all 0.6s;
   transition-timing-function:cubic-bezier(.57,.21,.69,1.25);
   cursor: pointer;
 }
@@ -108,6 +108,7 @@ border-radius: var(--border-radius);
 }
 .accordion__content {
   padding: 1rem;
+  max-width: 300px;
 }
 .accordion__label {
   writing-mode: vertical-rl;
