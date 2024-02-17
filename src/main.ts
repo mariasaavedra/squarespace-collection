@@ -120,24 +120,11 @@
   }
   const assignActiveCard = (slide: HTMLDivElement) => {
     const index = slide.dataset.index;
-    switch (index) {
-      case "0":
-        $slides[0]?.classList.add("active");
-        $slides[1]?.classList.remove("active");
-        $slides[2]?.classList.remove("active");
-        break;
-      case "1":
-        $slides[0]?.classList.remove("active");
-        $slides[1]?.classList.add("active");
-        $slides[2]?.classList.remove("active");
-        break;
-      case "2":
-        $slides[0]?.classList.add("active");
-        $slides[1]?.classList.add("active");
-        $slides[2]?.classList.add("active");
-        break;
-      default:
-        console.log("default");
+    for (const $slide of $slides) {
+      if (!index || !$slide.dataset.index) return;
+      if ($slide.dataset.index <= index) {
+        $slide.classList.add("active");
+      } else $slide.classList.remove("active");
     }
   };
 })();
