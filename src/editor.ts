@@ -63,4 +63,21 @@ export default function editor(accordionSingleton: AccordionSingleton) {
   };
 
   editor.innerHTML = generateEditorHTML(accordionSingleton.get());
+
+  const targetNode = document.getElementById("accordion");
+  const config = { attributes: true, childList: true, subtree: true };
+  // Callback function to execute when mutations are observed
+  const callback = (
+    mutationsList: MutationRecord[],
+    observer: MutationObserver
+  ) => {
+    for (const mutation of mutationsList) {
+      if (mutation.type === "childList" || mutation.type === "attributes") {
+        editor.innerHTML = generateEditorHTML(accordionSingleton.get());
+      }
+    }
+  };
+  const observer = new MutationObserver(callback);
+  if (!targetNode) return;
+  observer.observe(targetNode, config);
 }
