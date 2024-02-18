@@ -1,13 +1,13 @@
-import { Accordion, AccordionSingleton } from "./types";
+import { Accordion, AccordionItem, AccordionSingleton } from "./types";
 
-export default function editor(accordion: AccordionSingleton) {
+export default function editor(accordionSingleton: AccordionSingleton) {
   const editor = document.querySelector("#editor");
   if (!editor) return;
 
   const generateEditorHTML = (accordion: Accordion) => {
     let accordionHTML = accordion
       .map(
-        (item) => `
+        (item: AccordionItem) => `
         <div class="editor__form">
         <div class="editor__form__group">
           <label>Label:</label>
@@ -51,7 +51,7 @@ export default function editor(accordion: AccordionSingleton) {
           <input type="text" value="${item.content.button.link}" />
         </div>
         <footer class="editor__form__footer">
-          <button class="delete">Delete</button>
+          <button  class="delete">Delete</button>
           <button class="save">Save</button>
         </footer>
       </div>
@@ -62,5 +62,5 @@ export default function editor(accordion: AccordionSingleton) {
     return accordionHTML;
   };
 
-  editor.innerHTML = generateEditorHTML(accordion.get());
+  editor.innerHTML = generateEditorHTML(accordionSingleton.get());
 }
