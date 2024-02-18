@@ -3,6 +3,7 @@ export type AccordionSingleton = {
   remove: (index: number) => void;
   update: (index: number, newItem: AccordionItem) => void;
   get: () => Accordion;
+  render: () => void;
 };
 export type AccordionItem = {
   index: number;

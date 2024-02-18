@@ -1,34 +1,5 @@
-import { Accordion } from "./types";
-
-export default function accordion(data: Accordion) {
-  const accordion = document.querySelector<HTMLDivElement>("#accordion");
+export default function accordion() {
   const tabWidth = 50;
-
-  function generateAccordionHTML(slides: Accordion): string {
-    return slides
-      .map((slide) => {
-        return `<div data-index="${slide.index}" class="accordion__item accordion--${slide.color}">
-          <span class="accordion__label">${slide.label}</span>
-          <img
-            class="accordion__image"
-            src="${slide.image.src}"
-            alt="${slide.image.alt}"
-          />
-          <div class="accordion__content">
-            <h2 class="accordion__title">${slide.content.title}</h2>
-            <h3 class="accordion__subtitle">${slide.content.subtitle}</h3>
-            <p class="accordion__text">${slide.content.text}</p>
-            <button class="accordion__button" onclick="location.href='${slide.content.button.link}'">${slide.content.button.text}</button>
-          </div>
-        </div>`;
-      })
-      .join("");
-  }
-
-  const accordionHTML = generateAccordionHTML(data);
-  if (accordion) {
-    accordion.innerHTML = accordionHTML;
-  }
 
   const toggleSlide = (slide: HTMLDivElement) => {
     assignActiveCard(slide);
