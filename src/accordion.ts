@@ -2,7 +2,6 @@ import { placeholderSlides } from "./data/accordion";
 import { Accordion } from "./types";
 
 export default function accordion() {
-
   const accordion = document.querySelector<HTMLDivElement>("#accordion");
   const tabWidth = 50;
 

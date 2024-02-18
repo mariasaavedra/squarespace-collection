@@ -55,7 +55,6 @@ export default function editor(accordion: Accordion) {
           <button class="save">Save</button>
         </footer>
       </div>
-      
   `
       )
       .join("");
