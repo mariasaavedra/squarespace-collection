@@ -51,8 +51,8 @@ export default function editor(accordionSingleton: AccordionSingleton) {
           <input type="text" value="${item.content.button.link}" />
         </div>
         <footer class="editor__form__footer">
-          <button  class="delete">Delete</button>
-          <button class="save">Save</button>
+          <button data-index="${item.index}" class="delete">Delete</button>
+          <button data-index="${item.index}" class="save">Save</button>
         </footer>
       </div>
   `
@@ -64,13 +64,21 @@ export default function editor(accordionSingleton: AccordionSingleton) {
 
   editor.innerHTML = generateEditorHTML(accordionSingleton.get());
 
+  const deleteButtons = document.querySelectorAll(".delete");
+  for (const button of deleteButtons) {
+    button.addEventListener("click", () => {
+      const el = button as HTMLButtonElement;
+      if (!el.dataset.index) return;
+      const index = parseInt(el.dataset.index);
+      accordionSingleton.remove(index);
+      editor.innerHTML = generateEditorHTML(accordionSingleton.get());
+    });
+  }
+
   const targetNode = document.getElementById("accordion");
   const config = { attributes: true, childList: true, subtree: true };
   // Callback function to execute when mutations are observed
-  const callback = (
-    mutationsList: MutationRecord[],
-    observer: MutationObserver
-  ) => {
+  const callback = (mutationsList: MutationRecord[]) => {
     for (const mutation of mutationsList) {
       if (mutation.type === "childList" || mutation.type === "attributes") {
         editor.innerHTML = generateEditorHTML(accordionSingleton.get());

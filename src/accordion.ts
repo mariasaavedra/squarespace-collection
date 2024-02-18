@@ -9,6 +9,7 @@ export const accordion = ((): AccordionSingleton => {
     render();
   };
   const removeAccordionItem = (index: number) => {
+    console.log("removing", index);
     accordion = accordion.filter((item) => item.index !== index);
     render();
   };
