@@ -1,6 +1,6 @@
-import { Accordion } from "./types";
+import { Accordion, AccordionSingleton } from "./types";
 
-export default function editor(accordion: Accordion) {
+export default function editor(accordion: AccordionSingleton) {
   const editor = document.querySelector("#editor");
   if (!editor) return;
 
@@ -62,5 +62,5 @@ export default function editor(accordion: Accordion) {
     return accordionHTML;
   };
 
-  editor.innerHTML = generateEditorHTML(accordion);
+  editor.innerHTML = generateEditorHTML(accordion.get());
 }

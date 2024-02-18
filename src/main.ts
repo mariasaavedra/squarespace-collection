@@ -1,9 +1,9 @@
 import accordion from "./accordion";
 import { placeholderSlides } from "./data/accordion";
 import editor from "./editor";
-import { Accordion, AccordionItem } from "./types";
+import { Accordion, AccordionItem, AccordionSingleton } from "./types";
 
-const _accordion = (() => {
+const _accordion = ((): AccordionSingleton => {
   let accordion: Accordion = [...placeholderSlides];
   const addAccordionItem = (item: AccordionItem) => {
     accordion.push(item);
@@ -29,5 +29,5 @@ const _accordion = (() => {
 
 (() => {
   accordion();
-  editor(_accordion.get());
+  editor(_accordion);
 })();
