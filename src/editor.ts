@@ -4,6 +4,19 @@ export default function editor(accordionSingleton: AccordionSingleton) {
   const editor = document.querySelector("#editor");
   if (!editor) return;
 
+  const attachEventListeners = () => {
+    const deleteButtons = document.querySelectorAll(".delete");
+    for (const button of deleteButtons) {
+      button.addEventListener("click", () => {
+        const el = button as HTMLButtonElement;
+        if (!el.dataset.index) return;
+        const index = parseInt(el.dataset.index);
+        accordionSingleton.remove(index);
+        editor.innerHTML = generateEditorHTML(accordionSingleton.get());
+      });
+    }
+  };
+
   const generateEditorHTML = (accordion: Accordion) => {
     let accordionHTML = accordion
       .map(
@@ -63,17 +76,7 @@ export default function editor(accordionSingleton: AccordionSingleton) {
   };
 
   editor.innerHTML = generateEditorHTML(accordionSingleton.get());
-
-  const deleteButtons = document.querySelectorAll(".delete");
-  for (const button of deleteButtons) {
-    button.addEventListener("click", () => {
-      const el = button as HTMLButtonElement;
-      if (!el.dataset.index) return;
-      const index = parseInt(el.dataset.index);
-      accordionSingleton.remove(index);
-      editor.innerHTML = generateEditorHTML(accordionSingleton.get());
-    });
-  }
+  attachEventListeners();
 
   const targetNode = document.getElementById("accordion");
   const config = { attributes: true, childList: true, subtree: true };
@@ -82,6 +85,7 @@ export default function editor(accordionSingleton: AccordionSingleton) {
     for (const mutation of mutationsList) {
       if (mutation.type === "childList" || mutation.type === "attributes") {
         editor.innerHTML = generateEditorHTML(accordionSingleton.get());
+        attachEventListeners();
       }
     }
   };
