@@ -7,14 +7,18 @@ const _accordion = ((): AccordionSingleton => {
   let accordion: Accordion = [...placeholderSlides];
   const addAccordionItem = (item: AccordionItem) => {
     accordion.push(item);
+    render();
   };
   const removeAccordionItem = (index: number) => {
     accordion = accordion.filter((item) => item.index !== index);
+    render();
+
   };
   const updateAccordionItem = (index: number, newItem: AccordionItem) => {
     accordion = accordion.map((item) =>
       item.index === index ? newItem : item
     );
+    render();
   };
   const getAccordion = () => {
     return accordion;
@@ -39,7 +43,6 @@ const _accordion = ((): AccordionSingleton => {
       })
       .join("");
   };
-
   const render = () => {
     const el = document.querySelector<HTMLDivElement>("#accordion");
     if (!el) return;
@@ -58,4 +61,7 @@ const _accordion = ((): AccordionSingleton => {
 (() => {
   accordion();
   editor(_accordion);
+  setTimeout(() => {
+    _accordion.remove(0);
+  }, 5000);
 })();
