@@ -4,7 +4,7 @@
   --light: #fbf4e6;
   --peach: #faced3;
   --green: #464c19;
-  --dark: #1A1E27;
+  --dark: #1a1e27;
   --border-radius: 15px; /* Define a variable for border-radius */
 }
 * {
@@ -53,25 +53,6 @@ html {
   background-size: 20px 20px;
 }
 
-.layout {
-  width: 1366px;
-  height: 768px;
-
-  display: grid;
-  grid:
-    " body sidebar" 1fr
-    / auto 1fr;
-  gap: 8px;
-}
-
-.sidebar {
-  grid-area: sidebar;
-  border-radius: var(--border-radius);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.body {
-  grid-area: body;
-}
 .accordion--light {
   background-color: var(--light);
   color: var(--green);
