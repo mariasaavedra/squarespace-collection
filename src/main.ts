@@ -140,7 +140,16 @@
       const indexOfReversedSlides =
         indexesFromReversedSlides.indexOf(currentIndex) + 1;
 
-
+      // If it's the first slide, don't move it
+      if (currentIndex === 0) {
+        continue;
+      }
+      // Shift all the slides to the left
+      if (currentIndex <= indexOfClickedSlide) {
+        console.log("current index", currentIndex, "indexOfClickedSlide");
+        $slide.style.transform = `translateX(${currentIndex * tabWidth}px)`;
+      }
+      // Shift all the slides to the right
       if (currentIndex > indexOfClickedSlide) {
         $slide.style.transform = `translateX(calc(100% - ${
           indexOfReversedSlides * tabWidth
