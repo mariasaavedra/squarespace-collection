@@ -4,7 +4,7 @@
   --light: #fbf4e6;
   --peach: #faced3;
   --green: #464c19;
-  --dark: #333;
+  --dark: #1A1E27;
   --border-radius: 15px; /* Define a variable for border-radius */
 }
 * {
@@ -66,7 +66,8 @@ html {
 
 .sidebar {
   grid-area: sidebar;
-  background: blue;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .body {
   grid-area: body;
