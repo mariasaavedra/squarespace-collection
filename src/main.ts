@@ -28,6 +28,6 @@ const _accordion = ((): AccordionSingleton => {
 })();
 
 (() => {
-  accordion();
+  accordion(_accordion.get());
   editor(_accordion);
 })();

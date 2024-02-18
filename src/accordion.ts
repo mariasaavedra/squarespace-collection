@@ -1,7 +1,6 @@
-import { placeholderSlides } from "./data/accordion";
 import { Accordion } from "./types";
 
-export default function accordion() {
+export default function accordion(data: Accordion) {
   const accordion = document.querySelector<HTMLDivElement>("#accordion");
   const tabWidth = 50;
 
@@ -26,7 +25,7 @@ export default function accordion() {
       .join("");
   }
 
-  const accordionHTML = generateAccordionHTML(placeholderSlides);
+  const accordionHTML = generateAccordionHTML(data);
   if (accordion) {
     accordion.innerHTML = accordionHTML;
   }
