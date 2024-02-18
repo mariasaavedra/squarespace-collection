@@ -61,7 +61,4 @@ const _accordion = ((): AccordionSingleton => {
 (() => {
   accordion();
   editor(_accordion);
-  setTimeout(() => {
-    _accordion.remove(0);
-  }, 5000);
 })();
