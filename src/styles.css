@@ -4,6 +4,7 @@
   --light: #fbf4e6;
   --peach: #faced3;
   --green: #464c19;
+  --dark: #333;
   --border-radius: 15px; /* Define a variable for border-radius */
 }
 * {
@@ -12,6 +13,63 @@
 html {
   font-size: 16px;
   padding: 2rem;
+}
+.bg--light {
+  background-color: var(--light);
+  color: var(--green);
+}
+.bg--peach {
+  background-color: var(--peach);
+  color: var(--green);
+}
+.bg--green {
+  background-color: var(--green);
+  color: var(--light);
+}
+.bg--dark {
+  background-color: var(--dark);
+  color: var(--light);
+}
+.bg--pattern {
+  background-color: #242933;
+  opacity: 1;
+  background-image: repeating-linear-gradient(
+      45deg,
+      #1c212b 25%,
+      transparent 25%,
+      transparent 75%,
+      #1c212b 75%,
+      #1c212b
+    ),
+    repeating-linear-gradient(
+      45deg,
+      #1c212b 25%,
+      #242933 25%,
+      #242933 75%,
+      #1c212b 75%,
+      #1c212b
+    );
+  background-position: 0 0, 10px 10px;
+  background-size: 20px 20px;
+}
+
+.layout {
+  width: 1366px;
+  height: 768px;
+
+  display: grid;
+  grid:
+    " body sidebar" 1fr
+    / auto 1fr;
+  gap: 8px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: blue;
+}
+.body {
+  grid-area: body;
 }
 .accordion--light {
   background-color: var(--light);
