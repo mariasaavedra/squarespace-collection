@@ -36,3 +36,10 @@
     letter-spacing: 1px;
     text-align: left;
 }
+.editor__form__footer button {
+    background: var(--green);
+    color: white;
+    outline: 0;
+    border: 0;
+    padding: 10px 20px;
+}

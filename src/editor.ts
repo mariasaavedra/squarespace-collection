@@ -50,6 +50,10 @@ export default function editor(accordion: Accordion) {
           <label>Button Link:</label>
           <input type="text" value="${item.content.button.link}" />
         </div>
+        <footer class="editor__form__footer">
+          <button class="delete">Delete</button>
+          <button class="save">Save</button>
+        </footer>
       </div>
       
   `
