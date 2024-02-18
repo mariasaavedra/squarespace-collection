@@ -12,7 +12,6 @@ const _accordion = ((): AccordionSingleton => {
   const removeAccordionItem = (index: number) => {
     accordion = accordion.filter((item) => item.index !== index);
     render();
-
   };
   const updateAccordionItem = (index: number, newItem: AccordionItem) => {
     accordion = accordion.map((item) =>
@@ -25,8 +24,8 @@ const _accordion = ((): AccordionSingleton => {
   };
   const generateAccordionHTML = (slides: Accordion): string => {
     return slides
-      .map((slide) => {
-        return `<div data-index="${slide.index}" class="accordion__item accordion--${slide.color}">
+      .map((slide, index) => {
+        return `<div data-index="${index}" class="accordion__item accordion--${slide.color}">
           <span class="accordion__label">${slide.label}</span>
           <img
             class="accordion__image"
@@ -44,9 +43,18 @@ const _accordion = ((): AccordionSingleton => {
       .join("");
   };
   const render = () => {
+    const tabWidth = 50;
     const el = document.querySelector<HTMLDivElement>("#accordion");
     if (!el) return;
     el.innerHTML = generateAccordionHTML(accordion);
+    const $slides =
+      document.querySelectorAll<HTMLDivElement>(".accordion__item");
+    for (const slide of $slides) {
+      if (!slide.dataset.index) return;
+      const Xoffset = tabWidth * parseInt(slide.dataset.index);
+      slide.style.zIndex = slide.dataset.index;
+      slide.style.transform = `translateX(${Xoffset}px)`;
+    }
   };
   render();
   return {
@@ -61,4 +69,7 @@ const _accordion = ((): AccordionSingleton => {
 (() => {
   accordion();
   editor(_accordion);
+  setTimeout(() => {
+    _accordion.remove(0);
+  }, 1000);
 })();
