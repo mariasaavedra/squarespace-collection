@@ -1,4 +1,5 @@
 import accordion from "./accordion";
+import { placeholderSlides } from "./data/accordion";
 import editor from "./editor";
 import { Accordion, AccordionItem } from "./types";
 
@@ -27,10 +28,9 @@ import { Accordion, AccordionItem } from "./types";
 // })();
 
 // Initialize
-let _accordion: Accordion = [];
+let _accordion: Accordion = [...placeholderSlides];
 
 (() => {
   accordion();
   editor(_accordion);
 })();
-

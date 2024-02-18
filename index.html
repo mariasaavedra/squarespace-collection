@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Squarespace</title>
     <link rel="stylesheet" href="./src/styles.css" />
+    <link rel="stylesheet" href="./src/editor.css" />
   </head>
   <body>
     <section>
@@ -15,3 +16,47 @@
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
+
+<div class="editor__form">
+  <div class="editor__form__group">
+    <label>Label:</label>
+    <input
+      type="text"
+      value="${item.label}"
+    />
+  </div>
+  <div class="editor__form__group">
+    <label>Image Source:</label>
+    <input type="text" value="${item.image.src}" />
+  </div>
+  <div class="editor__form__group">
+    <label>Image Alt:</label>
+    <input type="text" value="${item.image.alt}" />
+  </div>
+  <div class="editor__form__group">
+    <label>Title:</label>
+    <input
+      type="text"
+      value="${item.content.title}"
+    />
+  </div>
+  <div class="editor__form__group">
+    <label>Subtitle:</label>
+    <input
+      type="text"
+      value="${item.content.subtitle}"
+    />
+  </div>
+  <div class="editor__form__group">
+    <label>Content:</label>
+    <textarea>${item.content.text}</textarea>
+  </div>
+  <div class="editor__form__group">
+    <label>Button Label:</label>
+    <input type="text" value="${item.content.button.text}" />
+  </div>
+  <div class="editor__form__group">
+    <label>Button Link:</label>
+    <input type="text" value="${item.content.button.link}" />
+  </div>
+</div>
