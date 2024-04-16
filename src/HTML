@@ -1,0 +1,280 @@
+<style>
+
+:root {
+  --light: #FFEAB2;
+  --peach: #D1D9DF;
+  --green: #9BBF8F;
+  --border-radius: 15px; /* Define a variable for border-radius */
+}
+.m2accordion {
+  overflow: hidden;
+  border-radius: var(--border-radius);
+}
+.m2accordion--light {
+  background-color: var(--light);
+  color: var(--green);
+}
+.m2accordion--peach {
+  background-color: var(--peach);
+  color: var(--green);
+}
+.m2accordion--green {
+  background-color: var(--green);
+  color: var(--light);
+}
+.m2accordion__button {
+    background-color: var(--light);
+    color: var(--green);
+}
+.m2accordion__label {
+  display: block;
+  text-align: center;
+  font-weight: 400;
+  font-family: "BethEllen-Regular";
+  color: #55754B;
+}
+.m2accordion__title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+  color: #55754B;
+}
+.m2accordion__subtitle {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  color: #55754B;
+  text-transform: uppercase;
+}
+.m2accordion__text {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #55754B;
+}
+.m2accordion__image {
+  border-radius: var(--border-radius);
+  aspect-ratio: 1/1.65;
+  max-width: 250px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+.m2accordion__content {
+  padding: 1rem;
+}
+
+.m2accordion__button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: fit-content;
+  padding: 10px 1rem;
+  background-color: #55754B;
+  color: light;
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--border-radius); /* Use the variable for border-radius */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.m2accordion--green .m2accordion__button {
+  background-color: var(--light);
+  color: var(--green);
+}
+/*   MOBILE & TABLET */
+@media (max-width: 1100px) {
+  .m2accordion {
+    height: 850px;
+    overflow: hidden;
+    position: relative;
+  }
+  .m2accordion__image {
+    max-height: 400px;
+  }
+  .m2accordion__item {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    overflow: hidden !important;
+    margin: 0 auto;
+    padding: 1rem;
+    transition: all 0.6s;
+    transition-timing-function: cubic-bezier(0.57, 0.21, 0.69, 1.25);
+    cursor: pointer;
+  }
+  .m2accordion__text {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  /* Accordion Items */
+  .m2accordion__item:nth-child(1) {
+    z-index: 1;
+    transform: translateY(0px);
+  }
+  .m2accordion__item:nth-child(2) {
+    z-index: 2;
+    transform: translateY(calc(100% - 100px));
+  }
+  .m2accordion__item:nth-child(3) {
+    z-index: 3;
+    transform: translateY(calc(100% - 50px));
+  }
+  /* Active Accordion Items  */
+  .active.m2accordion__item {
+    border-radius: var(--border-radius);
+  }
+  .active.m2accordion__item:nth-child(1) {
+    z-index: 1;
+    transform: translateY(0px);
+  }
+  .active.m2accordion__item:nth-child(2) {
+    z-index: 2;
+    transform: translateY(calc(50px));
+  }
+  .active.m2accordion__item:nth-child(3) {
+    z-index: 3;
+    transform: translateY(calc(100px));
+  }
+}
+
+@media (min-width: 1100px) {
+  .m2accordion {
+    position: relative;
+    overflow: hidden;
+    max-height: 600px;
+    border-radius: var(--border-radius);
+    aspect-ratio: 1.75/1;
+  }
+  .m2accordion__item {
+    display: flex;
+    gap: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    transition: all 0.6s;
+    transition-timing-function: cubic-bezier(0.57, 0.21, 0.69, 1.25);
+    cursor: pointer;
+  }
+  /* Accordion Items */
+  .m2accordion__item:nth-child(1) {
+    z-index: 1;
+    transform: translateX(0px);
+  }
+  .m2accordion__item:nth-child(2) {
+    z-index: 2;
+    transform: translateX(calc(100% - 100px));
+  }
+  .m2accordion__item:nth-child(3) {
+    z-index: 3;
+    transform: translateX(calc(100% - 50px));
+  }
+  /* Active Accordion Items  */
+  .active.m2accordion__item {
+    border-radius: var(--border-radius);
+  }
+  .active.m2accordion__item:nth-child(1) {
+    z-index: 1;
+    transform: translateX(0px);
+  }
+  .active.m2accordion__item:nth-child(2) {
+    z-index: 2;
+    transform: translateX(calc(50px));
+  }
+  .active.m2accordion__item:nth-child(3) {
+    z-index: 3;
+    transform: translateX(calc(100px));
+  }
+  .m2accordion__label {
+    display: unset;
+    writing-mode: vertical-rl;
+    transform: rotate(360deg);
+    text-align: unset;
+  }
+  .m2accordion__image {
+    display: unset;
+    margin: unset;
+    max-width: 250px;
+  }
+  .m2accordion__content {
+    max-width: 400px;
+    padding: 0 2.5rem;
+    position: relative;
+  }
+  .m2accordion__button {
+     margin-top: 2rem;
+  }
+}
+
+  @media only screen and (min-width: 1100px) and (max-width: 1290px) {
+  .m2accordion__content {
+    max-width: 270px;
+    padding: 0;
+    position: relative;
+  }
+}
+
+  
+
+</style>
+<div class="m2accordion">
+      <!-- Item 1 -->
+      <div data-index="0" class="m2accordion__item m2accordion--light">
+        <span class="m2accordion__label">1:1 Sessions</span>
+        <img
+          class="m2accordion__image"
+src="https://images.squarespace-cdn.com/content/5ffe8c45a2d4904d72aaadfe/5d7ab0ab-4307-4a53-9430-b4064eccd530/LDZxGabyAzorsky-June2023_024.jpg?content-type=image%2Fjpeg"          alt="Consult"
+        />
+        <div class="m2accordion__content">
+          <h3 class="m2accordion__title">1:1 Sessions</h3>
+          <p class="m2accordion__text">
+Single healing sessions are one of Gaby’s favorite ways to connect. She offers Reiki, Tarot Reading, and Sun Sessions, available for you to book whenever you feel intuitively called. <br><br>
+The System of Reiki is the foundation for Gaby’s healing practice. Reiki is the essence of pure love and compassion. <br><br>Sessions are 1:1 calls as a loving space for bringing structure to the spiritual.
+
+<br><br>During an Intuitive Tarot Reading session, Gaby channels your Higher Self, Spiritual Team, and Angels to help you gain clarity.          </p>
+         <a href="https://oriole-orchid-zsr8.squarespace.com/one-on-one-healing-sessions-1" class="m2accordion__button">Learn More</a>
+        </div>
+      </div>
+      <!-- Item 2 -->
+      <div data-index="1" class="m2accordion__item m2accordion--peach">
+        <span class="m2accordion__label">The Flower Portal</span>
+        <img
+          class="m2accordion__image"
+src="https://images.squarespace-cdn.com/content/5ffe8c45a2d4904d72aaadfe/e11bff7a-5137-4654-bea1-e4ecadabd2ef/Screenshot+2024-02-07+at+4.43.03+PM.png?content-type=image%2Fpng"          alt="Consult"
+        />
+        <div class="m2accordion__content">
+          <h3 class="m2accordion__title">The Flower Portal</h3>
+          <p class="m2accordion__text">
+            The Flower Portal is a heart-led monthly membership container held in the frequencies of unconditional love, compassion, and non-judgement. This is a safe, sparkly, nourishing, potent, joyful, immersive, and sensual space.<br></brThe>The Flower Portal offers a way to connect with Gaby that is most accessible and wide-reaching outside of one-on-one single sessions and mentorship. 
+          </p>
+                   <a href="https://oriole-orchid-zsr8.squarespace.com/portal-membership" class="m2accordion__button">Learn More</a>
+        </div>
+      </div>
+      <!-- Item 3 -->
+      <div data-index="2" class="m2accordion__item m2accordion--green">
+        <span class="m2accordion__label">Mentorship Container</span>
+        <img
+          class="m2accordion__image"
+src="https://images.squarespace-cdn.com/content/5ffe8c45a2d4904d72aaadfe/35b4c0bb-3760-4b42-9130-4973a7092cf0/Screenshot+2024-02-27+at+6.37.37+PM.png?content-type=image%2Fpng"          alt="Consult"
+        />
+        <div class="m2accordion__content">
+          <h3 class="m2accordion__title">Mentorship Containers</h3>
+  
+          <p class="m2accordion__text">
+If you find yourself wanting to go deeper within yourself, to connect more to Spirit and Mother Earth, to feel the marrow of your life more deeply and to honor your strength and power, this is for you.<br>This container is structured with many modalities, with the foundations being Distance Reiki, Tarot, and Sun Sessions.          </p>
+                      <a href="https://oriole-orchid-zsr8.squarespace.com/mentorship" class="m2accordion__button">Learn More</a>
+        </div>
+      </div>
+    </div>

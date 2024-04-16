@@ -12,25 +12,25 @@ export default function editor(accordionSingleton: AccordionSingleton) {
 
     const imageSource = (
       $slide_form.querySelector(
-        'input[type="text"][value="${item.image.src}"]'
+        'input[type="text"][name="imageSource"]'
       ) as HTMLInputElement
     )?.value;
 
     const imageAlt = (
       $slide_form.querySelector(
-        'input[type="text"][value="${item.image.alt}"]'
+        'input[type="text"][name="imageAlt"]'
       ) as HTMLInputElement
     )?.value;
 
     const title = (
       $slide_form.querySelector(
-        'input[type="text"][value="${item.content.title}"]'
+        'input[type="text"][name="title"]'
       ) as HTMLInputElement
     )?.value;
 
     const subtitle = (
       $slide_form.querySelector(
-        'input[type="text"][value="${item.content.subtitle}"]'
+        'input[type="text"][name="subtitle"]'
       ) as HTMLInputElement
     )?.value;
 
@@ -132,15 +132,16 @@ export default function editor(accordionSingleton: AccordionSingleton) {
         </div>
         <div class="editor__form__group">
           <label>Image Source:</label>
-          <input type="text" value="${item.image.src}" />
+          <input name="imageSource" type="text" value="${item.image.src}" />
         </div>
         <div class="editor__form__group">
           <label>Image Alt:</label>
-          <input type="text" value="${item.image.alt}" />
+          <input name="imageAlt"  type="text" value="${item.image.alt}" />
         </div>
         <div class="editor__form__group">
           <label>Title:</label>
           <input
+            name="title"
             type="text"
             value="${item.content.title}"
           />
@@ -148,13 +149,14 @@ export default function editor(accordionSingleton: AccordionSingleton) {
         <div class="editor__form__group">
           <label>Subtitle:</label>
           <input
+
             type="text"
             value="${item.content.subtitle}"
           />
         </div>
         <div class="editor__form__group">
           <label>Content:</label>
-          <textarea>${item.content.text}</textarea>
+          <textarea name="content">${item.content.text}</textarea>
         </div>
         <div class="editor__form__group">
           <label>Button Label:</label>
