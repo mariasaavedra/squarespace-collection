@@ -1,14 +1,14 @@
 @import "normalize.css";
 
 :root {
-  --light: #fbf4e6;
+  --light: #FFFBED;
   --peach: #faced3;
-  --green: #464c19;
-  --dark: #1a1e27;
+  --green: #FFFBED;
+  --dark: #371611;
   --border-radius: 15px; /* Define a variable for border-radius */
 }
 * {
-  font-family: "Roboto", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-weight: 400;
 }
 html {
@@ -106,8 +106,8 @@ html {
 }
 .accordion__image {
   border-radius: var(--border-radius);
-  aspect-ratio: 1/1.25;
-  max-width: 250px;
+  /* aspect-ratio: 1/1.25;
+  max-width: 250px; */
   object-fit: cover;
   display: block;
   margin: 0 auto;
@@ -161,9 +161,10 @@ html {
   .accordion {
     position: relative;
     overflow: hidden;
-    height: 350px;
+    min-height: 650px;
+    width: 1100px;
     border-radius: var(--border-radius);
-    aspect-ratio: 2.25/1;
+    /* aspect-ratio: 2.25/1; */
   }
   .accordion__item {
     display: flex;
@@ -189,11 +190,11 @@ html {
   .accordion__image {
     display: unset;
     margin: unset;
-    max-width: 250px;
+    /* max-width: 250px; */
   }
-  .accordion__content {
+  /* .accordion__content {
     max-width: 300px;
-  }
+  } */
 }
 .accordion__item__editor {
   background-color: var(--green);

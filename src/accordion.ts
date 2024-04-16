@@ -25,19 +25,18 @@ export const accordion = ((): AccordionSingleton => {
   const generateAccordionHTML = (slides: Accordion): string => {
     return slides
       .map((slide, index) => {
-        return `<div data-index="${index}" class="accordion__item accordion--${slide.color}">
+        return `<div data-index="${index}" class="accordion__item accordion--${slide.color}" style="background: ${slide.background};">
           <span class="accordion__label">${slide.label}</span>
           <img
             class="accordion__image"
             src="${slide.image.src}"
             alt="${slide.image.alt}"
           />
-          <div class="accordion__content">
-            <h2 class="accordion__title">${slide.content.title}</h2>
-            <h3 class="accordion__subtitle">${slide.content.subtitle}</h3>
-            <p class="accordion__text">${slide.content.text}</p>
-            <button class="accordion__button" onclick="location.href='${slide.content.button.link}'">${slide.content.button.text}</button>
-          </div>
+          <img
+          class="accordion__image"
+          src="${slide.image_right.src}"
+          alt="${slide.image_right.alt}"
+        />
         </div>`;
       })
       .join("");

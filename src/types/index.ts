@@ -14,14 +14,9 @@ export type AccordionItem = {
     src: string;
     alt: string;
   };
-  content: {
-    title: string;
-    subtitle: string;
-    text: string;
-    button: {
-      text: string;
-      link: string;
-    };
+  image_right: {
+    src: string;
+    alt: string;
   };
 };
 export type Accordion = AccordionItem[];
