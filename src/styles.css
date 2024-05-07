@@ -8,7 +8,7 @@
   --border-radius: 15px; /* Define a variable for border-radius */
 }
 * {
-  font-family: "Outfit", sans-serif;
+  font-family: "Libre Franklin", sans-serif;
   font-weight: 400;
 }
 html {
@@ -41,9 +41,9 @@ html {
   color: var(--light);
 }
 .bg--pattern {
-  background-color: #242933;
+  background-color: #1c212b;
   opacity: 1;
-  background-image: repeating-linear-gradient(
+  /* background-image: repeating-linear-gradient(
       45deg,
       #1c212b 25%,
       transparent 25%,
@@ -60,7 +60,7 @@ html {
       #1c212b
     );
   background-position: 0 0, 10px 10px;
-  background-size: 20px 20px;
+  background-size: 20px 20px; */
 }
 
 .accordion--light {
@@ -83,6 +83,8 @@ html {
   display: block;
   text-transform: uppercase;
   text-align: center;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 .accordion__title {
   font-size: 1.5rem;
@@ -178,6 +180,7 @@ html {
     margin: 0 auto;
     padding: 1rem;
     transition: all 0.6s;
+    border-radius: var(--border-radius);
     transition-timing-function: cubic-bezier(0.57, 0.21, 0.69, 1.25);
     cursor: pointer;
   }

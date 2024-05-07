@@ -8,11 +8,11 @@ export const placeholderSlides: Accordion = [
     color: "light", 
     label: "The Lobby & No Vacancy",
     image: {
-      src: "/lobby/1.png",
+      src: "/lobby/BR.png",
       alt: "Consult",
     },
     image_right: {
-      src: "/lobby/2.png",
+      src: "/lobby/BR2.png",
       alt: "Consult",
     },
   },
@@ -22,11 +22,11 @@ export const placeholderSlides: Accordion = [
     color: "light",
     label: "The Options",
     image: {
-      src: "/lobby/3.png",
+      src: "/lobby/BR3.png",
       alt: "Consult",
     },
     image_right: {
-      src: "/lobby/4.png",
+      src: "/lobby/BR4.png",
       alt: "Consult",
     },
   },
@@ -36,11 +36,11 @@ export const placeholderSlides: Accordion = [
     color: "light",
     label: "The Head Count",
     image: {
-      src: "/lobby/5.png",
+      src: "/lobby/BR5.png",
       alt: "Consult",
     },
     image_right: {
-      src: "/lobby/6.png",
+      src: "/lobby/BR6.png",
       alt: "Consult",
     },
   },
@@ -51,11 +51,11 @@ export const placeholderSlides: Accordion = [
     color: "dark",
     label: "Overview",
     image: {
-      src: "/lobby/7.png",
+      src: "/lobby/BR8.png",
       alt: "Consult",
     },
     image_right: {
-      src: "/lobby/8.png",
+      src: "/lobby/BR15.png",
       alt: "Consult",
     },
   },
@@ -63,15 +63,15 @@ export const placeholderSlides: Accordion = [
   {
     index: 4,
     background:
-      "#FFFBED",
+      "#371611",
     color: "light",
     label: "The Numbers",
     image: {
-      src: "/lobby/9.png",
+      src: "/lobby/BR13.png",
       alt: "Consult",
     },
     image_right: {
-      src: "/lobby/10.png",
+      src: "/lobby/TN1.png",
       alt: "Consult",
     },
   },
