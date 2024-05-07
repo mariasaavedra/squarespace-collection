@@ -1,28 +1,22 @@
 @import "normalize.css";
 
 :root {
-  --light: #FFFBED;
+  --light: #fffbed;
   --peach: #faced3;
-  --green: #FFFBED;
+  --green: #fffbed;
   --dark: #371611;
   --border-radius: 15px; /* Define a variable for border-radius */
 }
-* {
-  font-family: "Libre Franklin", sans-serif;
-  font-weight: 400;
-}
-html {
-  font-size: 16px;
-  padding: 2rem;
-}
-.app {
+
+.accordion_component {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   align-items: center;
   justify-content: center;
   text-align: center;
-
+  background: inherit;
+  padding: 2rem;
 }
 .bg--light {
   background-color: var(--light);

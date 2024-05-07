@@ -67,7 +67,7 @@ export const placeholderSlides: Accordion = [
     color: "light",
     label: "The Numbers",
     image: {
-      src: "/lobby/BR13.png",
+      src: "/lobby/BR10.png",
       alt: "Consult",
     },
     image_right: {
